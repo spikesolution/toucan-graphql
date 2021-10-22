@@ -1,0 +1,2 @@
+push:
+	. .env; git push
