@@ -22,4 +22,13 @@ API_URL = "https://api.thegraph.com/subgraphs/name/co2ken/tokenizer"
 
 json = client.query(body: body, url: API_URL)
 
-pp JSON.parse(json)
+rtn = JSON.parse(json)
+
+puts "ID, Quantity, Serial Number"
+rtn.dig("data", "batchTokens").each do |bt|
+  puts [
+    bt.fetch("id"),
+    bt.fetch("quantity"),
+    bt.fetch("serialNumber"),
+  ].join(", ")
+end
