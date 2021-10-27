@@ -2,6 +2,18 @@
 
 <h3>Serial number: <%= serial_number %></h3>
 
+<% if data.nil? %>
+  <h4>No data found</h4>
+<% else %>
+  <ul>
+    <% data.each do |key, value| %>
+      <li>
+        <b> <%= key %>: </b> <%= value %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <p>
   <a href="/batches">back</a>
 </p>

@@ -8,6 +8,7 @@ require "sinatra"
 require "./lib/graphql_client"
 require "./lib/projects"
 require "./lib/batches"
+require "./lib/verra_query"
 
 configure do
   set :views, "./views"
@@ -26,5 +27,7 @@ get "/projects" do
 end
 
 get "/verra_registry_search" do
-  erb :verra_registry_search, locals: { serial_number: params["serial_number"] }
+  serial_number = params.fetch("serial_number")
+  data = VerraQuery.new(serial_number).result
+  erb :verra_registry_search, locals: { serial_number: serial_number, data: data }
 end
