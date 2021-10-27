@@ -14,7 +14,9 @@
       <tr>
         <td><%= batch.id %></td>
         <td><%= batch.quantity %></td>
-        <td><%= batch.serial_numbers %></td>
+        <td>
+          <%= batch.serial_numbers.join("<br />") %>
+        </td>
       </tr>
     <% end %>
   </tbody>

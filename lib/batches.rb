@@ -4,7 +4,7 @@ class Batch
   def initialize(hash)
     @id = hash.fetch("id")
     @quantity = hash.fetch("quantity")
-    @serial_numbers = hash.fetch("serialNumber")
+    @serial_numbers = hash.fetch("serialNumber").split(",")
   end
 end
 
