@@ -1,0 +1,13 @@
+<h1>Projects</h1>
+
+<ul>
+  <% list.each do |p| %>
+    <li>
+      [ <%= p.fetch("id") %> ] <%= p.fetch("projectId") %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <a href="/">back</a>
+</p>
