@@ -1,12 +1,22 @@
 <h1>Projects</h1>
 
-<ul>
-  <% list.each do |p| %>
-    <li>
-      [ <%= p.fetch("id") %> ] <%= p.fetch("projectId") %>
-    </li>
-  <% end %>
-</ul>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Project ID</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% list.each do |p| %>
+      <tr>
+        <td><%= p.fetch("id") %></td>
+        <td><%= p.fetch("projectId") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <p>
   <a href="/">back</a>
