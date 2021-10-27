@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+#######################################################################
+# This script is deprecated. The code is left here for reference only #
+#######################################################################
+
 require "json"
 require "uri"
 require "net/http"
