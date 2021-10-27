@@ -1,4 +1,4 @@
-class BatchTokens
+class Batches
   BATCH_TOKENS_API = "https://api.thegraph.com/subgraphs/name/co2ken/tokenizer"
 
   def self.list
