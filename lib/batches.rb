@@ -1,3 +1,13 @@
+class Batch
+  attr_reader :id, :quantity, :serial_numbers
+
+  def initialize(hash)
+    @id = hash.fetch("id")
+    @quantity = hash.fetch("quantity")
+    @serial_numbers = hash.fetch("serialNumber")
+  end
+end
+
 class Batches
   BATCH_TOKENS_API = "https://api.thegraph.com/subgraphs/name/co2ken/tokenizer"
 
@@ -15,6 +25,6 @@ class Batches
     """
 
     json = client.query(body: body, url: BATCH_TOKENS_API)
-    rtn = JSON.parse(json).dig("data", "batchTokens")
+    JSON.parse(json).dig("data", "batchTokens").map { |hash| Batch.new(hash) }
   end
 end

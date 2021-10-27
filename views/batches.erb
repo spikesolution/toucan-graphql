@@ -10,11 +10,11 @@
   </thead>
 
   <tbody>
-    <% list.each do |bt| %>
+    <% list.each do |batch| %>
       <tr>
-        <td><%= bt.fetch("id") %></td>
-        <td><%= bt.fetch("quantity") %></td>
-        <td><%= bt.fetch("serialNumber") %></td>
+        <td><%= batch.id %></td>
+        <td><%= batch.quantity %></td>
+        <td><%= batch.serial_numbers %></td>
       </tr>
     <% end %>
   </tbody>
