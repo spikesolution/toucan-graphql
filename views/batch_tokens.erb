@@ -1,5 +1,25 @@
 <h1>Batch Tokens</h1>
 
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Quantity</th>
+      <th>Serial Number</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% list.each do |bt| %>
+      <tr>
+        <td><%= bt.fetch("id") %></td>
+        <td><%= bt.fetch("quantity") %></td>
+        <td><%= bt.fetch("serialNumber") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <p>
   <a href="/">back</a>
 </p>

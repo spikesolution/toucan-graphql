@@ -7,6 +7,7 @@ require "sinatra"
 
 require "./lib/graphql_client"
 require "./lib/projects"
+require "./lib/batch_tokens"
 
 configure do
   set :views, "./views"
@@ -17,7 +18,7 @@ get "/" do
 end
 
 get "/batch_tokens" do
-  erb :batch_tokens
+  erb :batch_tokens, locals: { list: BatchTokens.list }
 end
 
 get "/projects" do
