@@ -24,3 +24,7 @@ end
 get "/projects" do
   erb :projects, locals: { list: Projects.list }
 end
+
+get "/verra_registry_search" do
+  erb :verra_registry_search, locals: { serial_number: params["serial_number"] }
+end

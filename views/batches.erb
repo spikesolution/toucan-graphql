@@ -15,7 +15,12 @@
         <td><%= batch.id %></td>
         <td><%= batch.quantity %></td>
         <td>
-          <%= batch.serial_numbers.join("<br />") %>
+          <% batch.serial_numbers.each do |serial_number| %>
+            <a href="/verra_registry_search?serial_number=<%= serial_number %>">
+              <%= serial_number %>
+            </a>
+            <br />
+          <% end %>
         </td>
       </tr>
     <% end %>
