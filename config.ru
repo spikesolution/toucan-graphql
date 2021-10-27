@@ -1,2 +1,2 @@
-require "bin/server"
+require "./bin/server"
 run Sinatra::Application
